@@ -3,6 +3,7 @@ package com.company;
 import java.sql.SQLOutput;
 import java.util.*;
 import java.util.function.Function;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 public class Main {
@@ -59,19 +60,29 @@ public class Main {
                 return sumFirst - sumSecond;
             }
         });*/
-        System.out.println("Sortiran niz:");
+        //ispis lsite
+        System.out.println("Sortirana lista:");
 
         for(int a: lista) {
             System.out.print(a + " ");
-
         }
 
-        ArrayList<Integer> streamLista = new ArrayList<>();
 
 
-       lista.stream().sorted(c);
-        System.out.println("Sortiran niz:");
-        for(int a: streamLista) {
+
+        //unos druge liste
+        lista.clear();
+        System.out.println("\nUnesi listu brojeva za sortiranje koristeci stream Api");
+        temp = scanner.nextInt();
+        while (temp != 0) {
+            lista.add(temp);
+            temp = scanner.nextInt();
+        }
+
+
+        ArrayList<Integer> listaStreamApi = (ArrayList<Integer>) lista.stream().sorted(c).collect(Collectors.toList());
+        System.out.println("\nSortiran niz uz pomoc stream API:");
+        for(int a: listaStreamApi) {
             System.out.print(a + " ");
         }
 
