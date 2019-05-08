@@ -84,6 +84,16 @@ public class Main {
             System.out.print(a + " ");
         }
 
+        int[] niz = new int[2];
+        niz[0] = 9;
+        niz[1] = 11;
+        Arrays.sort(niz, c);
+        for(int a: niz) {
+            System.out.print(a + " ");
+        }
+
+
+
 
 
 
