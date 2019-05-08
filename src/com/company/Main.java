@@ -40,11 +40,9 @@ public class Main {
             }
         };
 
-        Collections.sort(lista, c);
-
-
-
-        /*Arrays.sort(lista.toArray(), new Comparator<Integer>() {
+        //Collections.sort(lista, c);
+        //implementacija comparatora preko lamda funkcije samo radi zbog vjezbe
+        Collections.sort(lista, new Comparator<Integer>() {
             public int compare(Integer o1, Integer o2) {
                 int sumFirst = 0;
                 while (o1 != 0) {
@@ -59,7 +57,7 @@ public class Main {
                 }
                 return sumFirst - sumSecond;
             }
-        });*/
+        });
         //ispis lsite
         System.out.println("Sortirana lista:");
 
